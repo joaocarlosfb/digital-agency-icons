@@ -57,8 +57,8 @@ export default function Home() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Installation</h2>
-          <Tabs defaultValue="react" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
+          <Tabs defaultValue="react">
+            <TabsList>
               <TabsTrigger value="react">React</TabsTrigger>
               <TabsTrigger value="vue">Vue 3</TabsTrigger>
               <TabsTrigger value="svelte">Svelte</TabsTrigger>
@@ -89,8 +89,8 @@ export default function Home() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Usage</h2>
-          <Tabs defaultValue="react" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
+          <Tabs defaultValue="react">
+            <TabsList>
               <TabsTrigger value="react">React</TabsTrigger>
               <TabsTrigger value="vue">Vue 3</TabsTrigger>
               <TabsTrigger value="svelte">Svelte</TabsTrigger>
