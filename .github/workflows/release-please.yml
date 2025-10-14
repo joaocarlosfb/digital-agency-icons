@@ -11,14 +11,12 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: node
-          package-name: digital-agency-icons
-          monorepo-tags: true
 
       # npm publish when release is created
       - name: Checkout code
