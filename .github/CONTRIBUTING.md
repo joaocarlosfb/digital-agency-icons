@@ -154,6 +154,40 @@ digital-agency-icons/
     └── workflows/      # GitHub Actions設定
 ```
 
+## トラブルシューティング
+
+### Next.js開発サーバーでモジュールエラーが出る
+
+**症状**: `Cannot find module './XXX.js'` というエラーが出る
+
+**原因**: Next.jsのビルドキャッシュが古くなっている
+
+**解決方法**:
+```bash
+# 開発サーバーを停止
+pkill -f "next dev"
+
+# キャッシュを削除
+rm -rf apps/docs/.next
+
+# 開発サーバーを再起動
+pnpm --filter @digital-agency-icons/docs dev
+```
+
+### ビルドエラーが出る
+
+**症状**: `pnpm build` が失敗する
+
+**解決方法**:
+```bash
+# node_modulesを削除して再インストール
+rm -rf node_modules
+pnpm install
+
+# ビルドを再実行
+pnpm build
+```
+
 ## 質問や問題
 
 IssueやDiscussionでお気軽にお問い合わせください！
