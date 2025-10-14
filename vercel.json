@@ -3,6 +3,5 @@
   "buildCommand": "pnpm install && pnpm --filter @digital-agency-icons/react build && pnpm --filter @digital-agency-icons/docs build",
   "outputDirectory": "apps/docs/.next",
   "framework": "nextjs",
-  "installCommand": "pnpm install",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet . ':(exclude)*.md'"
+  "installCommand": "pnpm install"
 }
