@@ -7,32 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  lint-and-type-check:
-    name: Lint and Type Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Type check
-        run: pnpm exec turbo run type-check
-
-  build:
-    name: Build Packages
+  build-and-check:
+    name: Build and Type Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -60,6 +36,9 @@ jobs:
           ls -la packages/core/dist
           ls -la packages/react/dist
           ls -la apps/docs/.next
+
+      - name: Type check
+        run: pnpm exec turbo run type-check
 
   build-matrix:
     name: Build on Node ${{ matrix.node }}
