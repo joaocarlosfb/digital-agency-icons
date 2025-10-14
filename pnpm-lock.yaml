@@ -79,7 +79,7 @@ importers:
   packages/react:
     dependencies:
       '@digital-agency-icons/core':
-        specifier: workspace:*
+        specifier: ^0.0.1
         version: link:../core
     devDependencies:
       '@types/node':
