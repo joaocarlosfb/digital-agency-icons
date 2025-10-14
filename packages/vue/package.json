@@ -18,7 +18,7 @@
   "scripts": {
     "build": "tsx scripts/generate.ts && vite build",
     "dev": "tsx scripts/generate.ts --watch",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "tsc --noEmit"
   },
   "keywords": [
     "icons",
