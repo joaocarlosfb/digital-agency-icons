@@ -1,0 +1,40 @@
+{
+  "name": "@digital-agency-icons/core",
+  "version": "0.0.1",
+  "description": "Core SVG data and utilities for Digital Agency Icons",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./icons": {
+      "import": "./dist/icons/index.js",
+      "types": "./dist/icons/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsx scripts/build.ts && tsc",
+    "dev": "tsx scripts/build.ts --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "icons",
+    "digital-agency",
+    "japan",
+    "government",
+    "svg"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
