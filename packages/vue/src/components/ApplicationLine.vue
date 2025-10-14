@@ -1,0 +1,55 @@
+<script setup lang="ts">
+import { computed, type StyleValue } from 'vue';
+
+export interface ApplicationLineProps {
+  size?: number | string;
+  color?: string;
+  class?: string;
+  style?: StyleValue;
+  'aria-label'?: string;
+  title?: string;
+}
+
+const props = withDefaults(defineProps<ApplicationLineProps>(), {
+  size: 24,
+  color: 'currentColor',
+});
+
+const svgStyle = computed(() => {
+  const baseStyle: StyleValue = { verticalAlign: 'middle' };
+  if (props.style) {
+    if (typeof props.style === 'string') {
+      return baseStyle;
+    }
+    return { ...baseStyle, ...props.style };
+  }
+  return baseStyle;
+});
+
+const svgAttrs = computed(() => {
+  const attrs: Record<string, any> = {};
+  if (props['aria-label']) {
+    attrs['aria-label'] = props['aria-label'];
+  }
+  if (props.title) {
+    attrs.role = 'img';
+  }
+  return attrs;
+});
+</script>
+
+<template>
+  <svg
+    :width="size"
+    :height="size"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    :class="props.class"
+    :style="svgStyle"
+    v-bind="svgAttrs"
+  >
+    <title v-if="title">{{ title }}</title>
+    <path d="M4 2H16.7L20 5.2V22H4V2ZM5.5 3.5V20.5H18.5V6.5H15.5V3.5H5.5ZM7 11H17V12.5H7V11ZM17 8H7V9.5H17V8ZM9.39844 15.1999L11.2984 16.8999L14.5984 13.8999L15.5984 15.0999L11.2984 18.9999L8.39844 16.2999L9.39844 15.1999Z" :fill="color" />
+  </svg>
+</template>
