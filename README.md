@@ -273,12 +273,13 @@ pnpm format
 
 このプロジェクトは [release-please](https://github.com/googleapis/release-please) を使用した自動リリースを採用しています。
 
-#### 開発フロー
+#### 開発フロー（コントリビューター向け）
 
-1. **developブランチで開発**
+1. **developブランチからfeatureブランチを作成**
    ```bash
    git checkout develop
    git pull origin develop
+   git checkout -b feature/your-feature-name
    ```
 
 2. **変更をコミット（Conventional Commits形式）**
@@ -287,12 +288,13 @@ pnpm format
    git commit -m "fix: correct icon size"
    ```
 
-3. **developにプッシュ**
+3. **featureブランチをプッシュしてPR作成**
    ```bash
-   git push origin develop
+   git push origin feature/your-feature-name
+   # feature/your-feature-name → develop へのPRを作成
    ```
 
-4. **develop → main のPRを作成・マージ**
+4. **PRがdevelopにマージされた後、develop → main のPRが作成・マージされる**
    - マージ後、release-pleaseが自動的にリリースPRを作成
 
 5. **リリースPRをマージ**
