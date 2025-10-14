@@ -12,7 +12,7 @@ import {
   HouseLine,
   SmartphoneFill,
   SmartphoneLine,
-} from '@digital-agency-icons/react';
+} from '@imaimai17468/digital-agency-icons-react';
 
 export default function Home() {
   return (
@@ -57,7 +57,7 @@ export default function Home() {
           <h2 className="text-2xl font-semibold mb-6">Installation</h2>
           <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
             <code className="text-sm">
-              pnpm add @digital-agency-icons/react
+              pnpm add @imaimai17468/digital-agency-icons-react
             </code>
           </div>
         </section>
@@ -66,7 +66,7 @@ export default function Home() {
           <h2 className="text-2xl font-semibold mb-6">Usage</h2>
           <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
             <pre className="text-sm overflow-x-auto">
-{`import { AddFill, SearchLine } from '@digital-agency-icons/react';
+{`import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-react';
 
 function App() {
   return (

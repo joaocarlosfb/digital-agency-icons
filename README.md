@@ -15,21 +15,21 @@
 
 このモノレポには以下のパッケージが含まれています：
 
-- `@digital-agency-icons/core` - SVGデータとコアユーティリティ
-- `@digital-agency-icons/react` - Reactコンポーネント
-- `@digital-agency-icons/docs` - 紹介サイト（Next.js）
+- `@imaimai17468/digital-agency-icons-core` - SVGデータとコアユーティリティ
+- `@imaimai17468/digital-agency-icons-react` - Reactコンポーネント
+- `@imaimai17468/digital-agency-icons-docs` - 紹介サイト（Next.js）
 
 ## インストール
 
 ```bash
 # pnpm
-pnpm add @digital-agency-icons/react
+pnpm add @imaimai17468/digital-agency-icons-react
 
 # npm
-npm install @digital-agency-icons/react
+npm install @imaimai17468/digital-agency-icons-react
 
 # yarn
-yarn add @digital-agency-icons/react
+yarn add @imaimai17468/digital-agency-icons-react
 ```
 
 ## 使い方
@@ -37,7 +37,7 @@ yarn add @digital-agency-icons/react
 ### React
 
 ```tsx
-import { AddFill, SearchLine, ArrowRightFill } from '@digital-agency-icons/react';
+import { AddFill, SearchLine, ArrowRightFill } from '@imaimai17468/digital-agency-icons-react';
 
 function App() {
   return (

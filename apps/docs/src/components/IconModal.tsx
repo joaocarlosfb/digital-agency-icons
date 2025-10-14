@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import * as Icons from '@digital-agency-icons/react';
+import * as Icons from '@imaimai17468/digital-agency-icons-react';
 import type { IconInfo } from '@/lib/icons';
 
 interface IconModalProps {
@@ -36,7 +36,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
   const componentName = variant === 'fill' ? icon.fillComponent : icon.lineComponent;
   const IconComponent = (Icons as any)[componentName];
 
-  const importStatement = `import { ${componentName} } from '@digital-agency-icons/react';`;
+  const importStatement = `import { ${componentName} } from '@imaimai17468/digital-agency-icons-react';`;
   const usageExample = `<${componentName} size={24} color="currentColor" />`;
   const usageExampleWithProps = `<${componentName}
   size={32}

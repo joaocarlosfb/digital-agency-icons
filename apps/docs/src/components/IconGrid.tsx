@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import type { IconInfo } from '@/lib/icons';
-import * as Icons from '@digital-agency-icons/react';
+import * as Icons from '@imaimai17468/digital-agency-icons-react';
 import { IconModal } from './IconModal';
 
 interface IconGridProps {
