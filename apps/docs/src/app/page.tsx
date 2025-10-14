@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import {
   AddFill,
@@ -17,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CodeBlock } from '@/components/code-block';
 
 export default function Home() {
+  const [framework, setFramework] = useState<string>('react');
   return (
     <main className="min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
@@ -57,7 +59,7 @@ export default function Home() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Installation</h2>
-          <Tabs defaultValue="react">
+          <Tabs value={framework} onValueChange={setFramework}>
             <TabsList>
               <TabsTrigger value="react">React</TabsTrigger>
               <TabsTrigger value="vue">Vue 3</TabsTrigger>
@@ -89,7 +91,7 @@ export default function Home() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Usage</h2>
-          <Tabs defaultValue="react">
+          <Tabs value={framework} onValueChange={setFramework}>
             <TabsList>
               <TabsTrigger value="react">React</TabsTrigger>
               <TabsTrigger value="vue">Vue 3</TabsTrigger>
