@@ -25,7 +25,7 @@ export default function Home() {
         <header className="mb-12">
           <h1 className="text-4xl font-bold mb-4">Digital Agency Icons</h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
-            デジタル庁デザインシステムのアイコンをReact/Vue/Svelteで使えるようにした非公式ライブラリ
+            デジタル庁デザインシステムのアイコンを楽に使えるようにした非公式ライブラリ
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
