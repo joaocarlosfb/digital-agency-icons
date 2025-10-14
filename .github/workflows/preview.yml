@@ -2,7 +2,7 @@ name: Preview Build Check
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, develop]
     paths:
       - 'apps/docs/**'
       - 'packages/**'
