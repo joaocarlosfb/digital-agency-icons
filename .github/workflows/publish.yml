@@ -47,6 +47,14 @@ jobs:
           npm version ${{ inputs.version }} --no-git-tag-version
           # Update dependency version in react package
           sed -i 's/"@imaimai17468\/digital-agency-icons-core": ".*"/"@imaimai17468\/digital-agency-icons-core": "^${{ inputs.version }}"/' package.json
+          cd ../vue
+          npm version ${{ inputs.version }} --no-git-tag-version
+          # Update dependency version in vue package
+          sed -i 's/"@imaimai17468\/digital-agency-icons-core": ".*"/"@imaimai17468\/digital-agency-icons-core": "^${{ inputs.version }}"/' package.json
+          cd ../svelte
+          npm version ${{ inputs.version }} --no-git-tag-version
+          # Update dependency version in svelte package
+          sed -i 's/"@imaimai17468\/digital-agency-icons-core": ".*"/"@imaimai17468\/digital-agency-icons-core": "^${{ inputs.version }}"/' package.json
 
       - name: Publish @imaimai17468/digital-agency-icons-core
         run: |
@@ -58,6 +66,20 @@ jobs:
       - name: Publish @imaimai17468/digital-agency-icons-react
         run: |
           cd packages/react
+          npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish @imaimai17468/digital-agency-icons-vue
+        run: |
+          cd packages/vue
+          npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish @imaimai17468/digital-agency-icons-svelte
+        run: |
+          cd packages/svelte
           npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -84,5 +106,7 @@ jobs:
             Published packages:
             - @imaimai17468/digital-agency-icons-core@${{ inputs.version }}
             - @imaimai17468/digital-agency-icons-react@${{ inputs.version }}
+            - @imaimai17468/digital-agency-icons-vue@${{ inputs.version }}
+            - @imaimai17468/digital-agency-icons-svelte@${{ inputs.version }}
           draft: false
           prerelease: false

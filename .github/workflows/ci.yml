@@ -35,6 +35,8 @@ jobs:
         run: |
           ls -la packages/core/dist
           ls -la packages/react/dist
+          ls -la packages/vue/dist
+          ls -la packages/svelte/dist
           ls -la apps/docs/.next
 
       - name: Type check

@@ -37,4 +37,6 @@ jobs:
           echo "✅ All packages built successfully"
           echo "📦 Core package size: $(du -sh packages/core/dist | cut -f1)"
           echo "⚛️ React package size: $(du -sh packages/react/dist | cut -f1)"
+          echo "🟢 Vue package size: $(du -sh packages/vue/dist | cut -f1)"
+          echo "🔶 Svelte package size: $(du -sh packages/svelte/dist | cut -f1)"
           echo "🌐 Docs build size: $(du -sh apps/docs/.next | cut -f1)"
