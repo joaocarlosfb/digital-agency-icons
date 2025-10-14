@@ -109,12 +109,15 @@ digital-agency-icons/
 - [ ] ユニットテスト（Vitest）
 - [ ] E2Eテスト（Playwright）
 
-### Phase 7: 公開準備
-- [ ] npm公開設定
+### Phase 7: 公開準備 ✅
+- [x] npm公開設定
+- [x] npm公開完了
+  - [x] @imaimai17468/digital-agency-icons-core@0.0.2
+  - [x] @imaimai17468/digital-agency-icons-react@0.0.2
 - [ ] バージョニング設定（changesets）
 - [ ] CI/CD設定（GitHub Actions）
 - [x] ライセンス確認（MIT）
-- [ ] 紹介サイトデプロイ（Vercel推奨）
+- [x] 紹介サイトデプロイ（Vercel）
 
 ## 技術スタック
 
@@ -159,16 +162,42 @@ digital-agency-icons/
   - Props一覧表
 - ✅ レスポンシブ＆ダークモード対応
 
+### 公開済みパッケージ
+- npm:
+  - [@imaimai17468/digital-agency-icons-core](https://www.npmjs.com/package/@imaimai17468/digital-agency-icons-core) v0.0.2
+  - [@imaimai17468/digital-agency-icons-react](https://www.npmjs.com/package/@imaimai17468/digital-agency-icons-react) v0.0.2
+- GitHub: https://github.com/imaimai17468/digital-agency-icons
+- Vercel: (Vercelのデプロイメント完了後にURLを追加)
+
 ### アクセス
 - ローカル開発サーバー: http://localhost:3000
 - アイコン検索: http://localhost:3000/icons
+
+## 完了した作業（最新）
+
+### v0.0.2 リリース (2025-10-14)
+- ✅ npm公開完了
+  - @imaimai17468/digital-agency-icons-core
+  - @imaimai17468/digital-agency-icons-react
+- ✅ Vercelデプロイ完了
+- ✅ パッケージ名を個人スコープに変更（@digital-agency-icons → @imaimai17468）
+- ✅ GitHubリポジトリURL修正
+- ✅ TypeScript型定義の改善（条件付きprop適用）
+- ✅ vite-plugin-dts導入で自動型生成
+
+### 技術的な改善
+- ✅ Reactコンポーネントの型安全性向上
+- ✅ Tree-shaking対応の確認
+- ✅ アクセシビリティ対応（aria-label、title）
+- ✅ レスポンシブデザイン完全対応
+- ✅ ダークモード対応
 
 ## 今後の拡張候補
 
 ### 優先度: 高
 - [ ] Vue/Svelteパッケージの追加
-- [ ] 紹介サイトのデプロイ（Vercel）
-- [ ] npm公開
+- [x] 紹介サイトのデプロイ（Vercel）✅
+- [x] npm公開 ✅
 
 ### 優先度: 中
 - [ ] ユニットテスト追加
