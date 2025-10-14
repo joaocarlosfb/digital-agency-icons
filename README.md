@@ -1,5 +1,9 @@
 # Digital Agency Icons
 
+[![CI](https://github.com/imaimai17468/digital-agency-icons/actions/workflows/ci.yml/badge.svg)](https://github.com/imaimai17468/digital-agency-icons/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/@imaimai17468%2Fdigital-agency-icons-react.svg)](https://www.npmjs.com/package/@imaimai17468/digital-agency-icons-react)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 デジタル庁公式アイコンのReact/Vue/Svelteコンポーネントライブラリ
 
 ## 特徴
