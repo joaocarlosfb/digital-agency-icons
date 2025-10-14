@@ -40,18 +40,26 @@ export const ${componentName}: React.FC<${componentName}Props> = ({
   'aria-label': ariaLabel,
   title,
 }) => {
+  const svgProps: React.SVGProps<SVGSVGElement> = {
+    width: size,
+    height: size,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className,
+    style: { verticalAlign: 'middle', ...style },
+  };
+
+  if (ariaLabel) {
+    svgProps['aria-label'] = ariaLabel;
+  }
+
+  if (title) {
+    svgProps.role = 'img';
+  }
+
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      style={{ verticalAlign: 'middle', ...style }}
-      aria-label={ariaLabel}
-      role={title ? 'img' : undefined}
-    >
+    <svg {...svgProps}>
       {title && <title>{title}</title>}
       <path d="${pathData}" fill={color} />
     </svg>

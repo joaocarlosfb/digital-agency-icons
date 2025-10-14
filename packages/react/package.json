@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsx scripts/generate.ts && vite build && tsc --emitDeclarationOnly",
+    "build": "tsx scripts/generate.ts && vite build",
     "dev": "tsx scripts/generate.ts --watch",
     "type-check": "tsc --noEmit"
   },
@@ -29,11 +29,24 @@
     "components"
   ],
   "license": "MIT",
+  "author": "Digital Agency Icons Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/to-imai/digital-agency-icons.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/to-imai/digital-agency-icons#readme",
+  "bugs": {
+    "url": "https://github.com/to-imai/digital-agency-icons/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@digital-agency-icons/core": "workspace:*"
+    "@digital-agency-icons/core": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
