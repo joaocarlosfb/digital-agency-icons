@@ -101,7 +101,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
     >
       <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto m-4">
         {/* ヘッダー */}
-        <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
+        <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             {IconComponent && (
               <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
