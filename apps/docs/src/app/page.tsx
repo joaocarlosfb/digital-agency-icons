@@ -73,8 +73,8 @@ export default function Home() {
             ].map(({ Fill, Line, name }) => (
               <div key={name} className="border rounded-lg p-4">
                 <div className="flex items-center gap-4 mb-2">
-                  <Fill size={32} color="#1A1A1C" aria-label={`${name} Fill`} />
-                  <Line size={32} color="#1A1A1C" aria-label={`${name} Line`} />
+                  <Fill size={32} color="currentColor" aria-label={`${name} Fill`} />
+                  <Line size={32} color="currentColor" aria-label={`${name} Line`} />
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{name}</p>
               </div>
