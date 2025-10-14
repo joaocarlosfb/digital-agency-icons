@@ -174,6 +174,38 @@ import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-vue';
           </ul>
         </section>
 
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">デザインシステム</h2>
+          <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gray-50 dark:bg-gray-800">
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              このライブラリは、デジタル庁が公開している公式デザインシステムのアイコンを元に作成されています。
+            </p>
+            <a
+              href="https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 text-gray-700 dark:text-gray-300 rounded-lg transition-colors"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              デジタル庁デザインシステム - イラスト・アイコン
+            </a>
+          </div>
+        </section>
+
         <section className="border-t border-gray-200 dark:border-gray-700 pt-12">
           <div className="text-center">
             <h2 className="text-2xl font-semibold mb-4">すべてのアイコンを見る</h2>
