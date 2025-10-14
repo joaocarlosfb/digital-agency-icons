@@ -2,6 +2,24 @@
 
 このプロジェクトへの貢献に興味を持っていただきありがとうございます！
 
+## ブランチ戦略
+
+このプロジェクトはGitFlowブランチ戦略を採用しています：
+
+```
+main (本番・安定版)
+  ↑
+develop (開発ブランチ)
+  ↑
+feature/xxx (機能ブランチ)
+```
+
+### ブランチの役割
+
+- **main**: 本番環境にデプロイされる安定版。npmへの公開もこのブランチから行います。
+- **develop**: 開発中の機能が統合されるブランチ。次のリリースの準備を行います。
+- **feature/xxx**: 新機能や修正を開発するための一時的なブランチ。
+
 ## 開発環境のセットアップ
 
 ### 必要な環境
@@ -56,15 +74,26 @@ npm公開は手動でトリガーします：
 
 GitHubとVercelを連携することで、mainブランチへのプッシュで自動デプロイされます。
 
-## プルリクエストのガイドライン
+## 開発フロー
 
-1. **ブランチを作成**
+### 新機能を追加する場合
+
+1. **developブランチから機能ブランチを作成**
    ```bash
+   git checkout develop
+   git pull origin develop
    git checkout -b feature/your-feature-name
    ```
 
-2. **変更をコミット**
+2. **変更を加える**
    ```bash
+   # コードを編集
+   pnpm build  # ビルドして確認
+   ```
+
+3. **変更をコミット**
+   ```bash
+   git add .
    git commit -m "feat: add new feature"
    ```
 
@@ -74,14 +103,41 @@ GitHubとVercelを連携することで、mainブランチへのプッシュで�
    - `docs:` ドキュメント変更
    - `chore:` ビルドやツールの変更
    - `refactor:` リファクタリング
+   - `ci:` CI/CD関連の変更
 
-3. **プッシュとPR作成**
+4. **プッシュとPR作成**
    ```bash
    git push origin feature/your-feature-name
+
+   # GitHub CLIを使う場合
+   gh pr create --base develop --head feature/your-feature-name
    ```
 
-4. **CIの成功を確認**
-   PRを作成すると自動的にCIが実行されます。すべてのチェックが通過することを確認してください。
+5. **CIの成功を確認**
+   PRを作成すると自動的に以下が実行されます：
+   - ビルドチェック
+   - 型チェック
+   - パッケージサイズの表示
+
+6. **レビューとマージ**
+   - CIが通過したら、レビューを待ちます
+   - 承認されたら `develop` ブランチにマージされます
+
+### リリースする場合
+
+1. **develop → main へPR作成**
+   ```bash
+   git checkout develop
+   gh pr create --base main --head develop --title "Release vX.X.X"
+   ```
+
+2. **リリース準備**
+   - CHANGELOG を確認
+   - バージョン番号を決定
+
+3. **マージ後、npm公開**
+   - GitHub Actionsの「Publish to npm」ワークフローを手動実行
+   - バージョン番号を入力して公開
 
 ## パッケージ構造
 
