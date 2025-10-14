@@ -269,6 +269,51 @@ pnpm lint
 pnpm format
 ```
 
+### リリースフロー
+
+このプロジェクトは [release-please](https://github.com/googleapis/release-please) を使用した自動リリースを採用しています。
+
+#### 開発フロー（コントリビューター向け）
+
+1. **developブランチからfeatureブランチを作成**
+   ```bash
+   git checkout develop
+   git pull origin develop
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **変更をコミット（Conventional Commits形式）**
+   ```bash
+   git commit -m "feat: add new icon"
+   git commit -m "fix: correct icon size"
+   ```
+
+3. **featureブランチをプッシュしてPR作成**
+   ```bash
+   git push origin feature/your-feature-name
+   # feature/your-feature-name → develop へのPRを作成
+   ```
+
+4. **PRがdevelopにマージされた後、develop → main のPRが作成・マージされる**
+   - マージ後、release-pleaseが自動的にリリースPRを作成
+
+5. **リリースPRをマージ**
+   - 自動的にGitHubリリースが作成される
+   - 自動的にnpmに公開される
+
+#### コミットメッセージの形式
+
+[Conventional Commits](https://www.conventionalcommits.org/) に従ってください：
+
+- `feat:` - 新機能（minor/patchバージョンアップ）
+- `fix:` - バグ修正（patchバージョンアップ）
+- `docs:` - ドキュメント変更
+- `chore:` - ビルドやツールの変更
+- `refactor:` - リファクタリング
+- `ci:` - CI/CD関連の変更
+
+詳細は [CONTRIBUTING.md](.github/CONTRIBUTING.md) を参照してください。
+
 ## ライセンス
 
 MIT

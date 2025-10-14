@@ -102,14 +102,46 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
           <section>
             <h3 className="text-lg font-semibold mb-3">インポート</h3>
             <div className="relative">
-              <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 pr-24 overflow-x-auto text-sm">
+              <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm">
                 <code>{importStatement}</code>
               </pre>
               <button
                 onClick={() => copyToClipboard(importStatement, 'import')}
-                className="absolute top-3 right-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+                className="absolute top-2 right-2 p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Copy to clipboard"
               >
-                {copiedItem === 'import' ? '✓ コピー完了' : 'コピー'}
+                {copiedItem === 'import' ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-green-600 dark:text-green-400"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-gray-600 dark:text-gray-400"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
               </button>
             </div>
           </section>
@@ -118,14 +150,46 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
           <section>
             <h3 className="text-lg font-semibold mb-3">基本的な使い方</h3>
             <div className="relative">
-              <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 pr-24 overflow-x-auto text-sm">
+              <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm">
                 <code>{usageExample}</code>
               </pre>
               <button
                 onClick={() => copyToClipboard(usageExample, 'basic')}
-                className="absolute top-3 right-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+                className="absolute top-2 right-2 p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Copy to clipboard"
               >
-                {copiedItem === 'basic' ? '✓ コピー完了' : 'コピー'}
+                {copiedItem === 'basic' ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-green-600 dark:text-green-400"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-gray-600 dark:text-gray-400"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
               </button>
             </div>
           </section>
@@ -134,14 +198,46 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
           <section>
             <h3 className="text-lg font-semibold mb-3">カスタマイズ例</h3>
             <div className="relative">
-              <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 pr-24 overflow-x-auto text-sm">
+              <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm">
                 <code>{usageExampleWithProps}</code>
               </pre>
               <button
                 onClick={() => copyToClipboard(usageExampleWithProps, 'advanced')}
-                className="absolute top-3 right-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+                className="absolute top-2 right-2 p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Copy to clipboard"
               >
-                {copiedItem === 'advanced' ? '✓ コピー完了' : 'コピー'}
+                {copiedItem === 'advanced' ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-green-600 dark:text-green-400"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-gray-600 dark:text-gray-400"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
               </button>
             </div>
           </section>
