@@ -115,7 +115,10 @@ digital-agency-icons/
   - [x] @imaimai17468/digital-agency-icons-core@0.0.2
   - [x] @imaimai17468/digital-agency-icons-react@0.0.2
 - [ ] バージョニング設定（changesets）
-- [ ] CI/CD設定（GitHub Actions）
+- [x] CI/CD設定（GitHub Actions）✅
+  - [x] CI workflow (build, type-check, multi-version test)
+  - [x] CD workflow (npm publish with manual trigger)
+  - [x] Preview workflow (PR build check)
 - [x] ライセンス確認（MIT）
 - [x] 紹介サイトデプロイ（Vercel）
 
@@ -192,6 +195,16 @@ digital-agency-icons/
 - ✅ レスポンシブデザイン完全対応
 - ✅ ダークモード対応
 
+### CI/CD設定完了 (2025-10-14)
+- ✅ GitHub Actions CI workflow
+  - プッシュ/PR時の自動ビルド・型チェック
+  - Node.js 18, 20, 22 のマルチバージョンテスト
+- ✅ GitHub Actions CD workflow
+  - 手動トリガーでのnpm公開
+  - npm provenance対応
+- ✅ GitHub Actions Preview workflow
+  - PR時のビルド確認
+
 ## 今後の拡張候補
 
 ### 優先度: 高
@@ -201,7 +214,7 @@ digital-agency-icons/
 
 ### 優先度: 中
 - [ ] ユニットテスト追加
-- [ ] CI/CD設定
+- [x] CI/CD設定 ✅
 - [ ] Storybookの追加
 - [ ] アイコン使用統計の追加
 
