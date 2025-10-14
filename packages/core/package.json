@@ -32,6 +32,19 @@
     "svg"
   ],
   "license": "MIT",
+  "author": "Digital Agency Icons Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/to-imai/digital-agency-icons.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/to-imai/digital-agency-icons#readme",
+  "bugs": {
+    "url": "https://github.com/to-imai/digital-agency-icons/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/node": "^20.11.19",
     "tsx": "^4.7.1",
