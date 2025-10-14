@@ -35,6 +35,9 @@ importers:
       next:
         specifier: ^15.1.6
         version: 15.5.5(react-dom@19.2.0)(react@19.2.0)
+      next-themes:
+        specifier: ^0.4.6
+        version: 0.4.6(react-dom@19.2.0)(react@19.2.0)
       react:
         specifier: ^19.0.0
         version: 19.2.0
@@ -89,7 +92,7 @@ importers:
     dependencies:
       '@imaimai17468/digital-agency-icons-core':
         specifier: ^0.0.2
-        version: link:../core
+        version: 0.0.2
     devDependencies:
       '@types/node':
         specifier: ^20.11.19
@@ -120,7 +123,7 @@ importers:
     dependencies:
       '@imaimai17468/digital-agency-icons-core':
         specifier: ^0.0.2
-        version: link:../core
+        version: 0.0.2
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.2
@@ -151,7 +154,7 @@ importers:
     dependencies:
       '@imaimai17468/digital-agency-icons-core':
         specifier: ^0.0.2
-        version: link:../core
+        version: 0.0.2
     devDependencies:
       '@types/node':
         specifier: ^20.11.19
@@ -1078,6 +1081,10 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
     dev: true
+
+  /@imaimai17468/digital-agency-icons-core@0.0.2:
+    resolution: {integrity: sha512-lwxmz4uRrp2mhsb8NZzuB5jbsS6gOaitN3JpFq9iGuxSfvViI6N1NEWOmgNG2PBOM+uN1Avotv/tX4Ym0L0f+Q==}
+    dev: false
 
   /@img/colour@1.0.0:
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -4643,6 +4650,16 @@ packages:
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
+
+  /next-themes@0.4.6(react-dom@19.2.0)(react@19.2.0):
+    resolution: {integrity: sha512-pZvgD5L0IEvX5/9GWyHMf3m8BKiVQwsCMHfoFosXtXBMnaS0ZnIJ9ST4b4NqLVKDEm8QBxoNNGNaBv2JNF6XNA==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+    dependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+    dev: false
 
   /next@15.5.5(react-dom@19.2.0)(react@19.2.0):
     resolution: {integrity: sha512-OQVdBPtpBfq7HxFN0kOVb7rXXOSIkt5lTzDJDGRBcOyVvNRIWFauMqi1gIHd1pszq1542vMOGY0HP4CaiALfkA==}

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { IconSearch } from '@/components/IconSearch';
 import { IconGrid } from '@/components/IconGrid';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { searchIcons, iconMetadata, type Category } from '@/lib/icons';
 
 export default function IconsPage() {
@@ -32,6 +33,7 @@ export default function IconsPage() {
                 デジタル庁公式アイコン全60種類（Fill/Line）
               </p>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>
