@@ -21,7 +21,7 @@ export default function Home() {
         <header className="mb-12">
           <h1 className="text-4xl font-bold mb-4">Digital Agency Icons</h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
-            デジタル庁公式アイコンライブラリ - React版
+            デジタル庁公式アイコンライブラリ - React / Vue / Svelte対応
           </p>
           <Link
             href="/icons"
@@ -55,17 +55,41 @@ export default function Home() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Installation</h2>
-          <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
-            <code className="text-sm">
-              pnpm add @imaimai17468/digital-agency-icons-react
-            </code>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div>
+              <h3 className="text-lg font-medium mb-2">React</h3>
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                <code className="text-sm">
+                  pnpm add @imaimai17468/digital-agency-icons-react
+                </code>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-2">Vue 3</h3>
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                <code className="text-sm">
+                  pnpm add @imaimai17468/digital-agency-icons-vue
+                </code>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-2">Svelte</h3>
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                <code className="text-sm">
+                  pnpm add @imaimai17468/digital-agency-icons-svelte
+                </code>
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Usage</h2>
-          <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
-            <pre className="text-sm overflow-x-auto">
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-medium mb-2">React</h3>
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                <pre className="text-sm overflow-x-auto">
 {`import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-react';
 
 function App() {
@@ -76,7 +100,39 @@ function App() {
     </div>
   );
 }`}
-            </pre>
+                </pre>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-2">Vue 3</h3>
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                <pre className="text-sm overflow-x-auto">
+{`<script setup lang="ts">
+import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-vue';
+</script>
+
+<template>
+  <div>
+    <AddFill :size="24" color="currentColor" />
+    <SearchLine :size="32" color="#1A1A1C" />
+  </div>
+</template>`}
+                </pre>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-2">Svelte</h3>
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                <pre className="text-sm overflow-x-auto">
+{`<script lang="ts">
+  import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-svelte';
+</script>
+
+<AddFill size={24} color="currentColor" />
+<SearchLine size={32} color="#1A1A1C" />`}
+                </pre>
+              </div>
+            </div>
           </div>
         </section>
 

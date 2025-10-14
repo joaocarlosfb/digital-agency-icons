@@ -9,7 +9,7 @@
 ## 特徴
 
 - 🎨 120個のアイコン（Fill/Line バリアント）
-- ⚛️ React/Vue/Svelte対応（現在はReactのみ実装済み）
+- ⚛️ React/Vue/Svelte対応
 - 📦 Tree-shaking対応（個別インポート可能）
 - 🔧 TypeScript完全対応
 - ♿ アクセシビリティ対応
@@ -21,9 +21,13 @@
 
 - `@imaimai17468/digital-agency-icons-core` - SVGデータとコアユーティリティ
 - `@imaimai17468/digital-agency-icons-react` - Reactコンポーネント
+- `@imaimai17468/digital-agency-icons-vue` - Vue 3コンポーネント
+- `@imaimai17468/digital-agency-icons-svelte` - Svelteコンポーネント
 - `@imaimai17468/digital-agency-icons-docs` - 紹介サイト（Next.js）
 
 ## インストール
+
+### React
 
 ```bash
 # pnpm
@@ -34,6 +38,32 @@ npm install @imaimai17468/digital-agency-icons-react
 
 # yarn
 yarn add @imaimai17468/digital-agency-icons-react
+```
+
+### Vue 3
+
+```bash
+# pnpm
+pnpm add @imaimai17468/digital-agency-icons-vue
+
+# npm
+npm install @imaimai17468/digital-agency-icons-vue
+
+# yarn
+yarn add @imaimai17468/digital-agency-icons-vue
+```
+
+### Svelte
+
+```bash
+# pnpm
+pnpm add @imaimai17468/digital-agency-icons-svelte
+
+# npm
+npm install @imaimai17468/digital-agency-icons-svelte
+
+# yarn
+yarn add @imaimai17468/digital-agency-icons-svelte
 ```
 
 ## 使い方
@@ -62,6 +92,54 @@ function App() {
     </div>
   );
 }
+```
+
+### Vue 3
+
+```vue
+<script setup lang="ts">
+import { AddFill, SearchLine, ArrowRightFill } from '@imaimai17468/digital-agency-icons-vue';
+</script>
+
+<template>
+  <div>
+    <!-- デフォルト: 24px, currentColor -->
+    <AddFill />
+
+    <!-- サイズとカラーをカスタマイズ -->
+    <SearchLine :size="32" color="#1A1A1C" />
+
+    <!-- アクセシビリティ対応 -->
+    <ArrowRightFill
+      :size="24"
+      color="currentColor"
+      aria-label="次へ"
+      title="次へ進む"
+    />
+  </div>
+</template>
+```
+
+### Svelte
+
+```svelte
+<script lang="ts">
+  import { AddFill, SearchLine, ArrowRightFill } from '@imaimai17468/digital-agency-icons-svelte';
+</script>
+
+<!-- デフォルト: 24px, currentColor -->
+<AddFill />
+
+<!-- サイズとカラーをカスタマイズ -->
+<SearchLine size={32} color="#1A1A1C" />
+
+<!-- アクセシビリティ対応 -->
+<ArrowRightFill
+  size={24}
+  color="currentColor"
+  aria-label="次へ"
+  title="次へ進む"
+/>
 ```
 
 ### Props
@@ -166,7 +244,9 @@ pnpm --filter @digital-agency-icons/docs dev
 digital-agency-icons/
 ├── packages/
 │   ├── core/           # SVGデータとコア機能
-│   └── react/          # Reactコンポーネント
+│   ├── react/          # Reactコンポーネント
+│   ├── vue/            # Vue 3コンポーネント
+│   └── svelte/         # Svelteコンポーネント
 ├── apps/
 │   └── docs/           # 紹介サイト（Next.js）
 └── assets/

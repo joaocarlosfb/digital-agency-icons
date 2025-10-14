@@ -69,11 +69,13 @@ digital-agency-icons/
 - [x] ビルド設定（vite）
 - [x] Tree-shaking対応
 
-### Phase 4: Vue/Svelteパッケージ開発
-- [ ] packages/vue セットアップ
-- [ ] Vue用コンポーネント生成
-- [ ] packages/svelte セットアップ
-- [ ] Svelte用コンポーネント生成
+### Phase 4: Vue/Svelteパッケージ開発 ✅
+- [x] packages/vue セットアップ
+- [x] Vue用コンポーネント生成スクリプト作成
+- [x] Vue用アイコンコンポーネント生成（120個）
+- [x] packages/svelte セットアップ
+- [x] Svelte用コンポーネント生成スクリプト作成
+- [x] Svelte用アイコンコンポーネント生成（120個）
 
 ### Phase 5: 紹介サイト開発 ✅
 - [x] Next.js 15 プロジェクトセットアップ
@@ -204,6 +206,21 @@ digital-agency-icons/
   - npm provenance対応
 - ✅ GitHub Actions Preview workflow
   - PR時のビルド確認
+
+### Vue/Svelteパッケージ追加 (2025-10-14)
+- ✅ Vue 3パッケージ実装
+  - 120個のアイコンコンポーネント生成
+  - Composition API対応
+  - TypeScript完全対応
+  - vite-plugin-dts導入で自動型生成
+- ✅ Svelteパッケージ実装
+  - 120個のアイコンコンポーネント生成
+  - TypeScript対応
+  - vite-plugin-dts導入で自動型生成
+- ✅ ドキュメント更新
+  - README.mdにVue/Svelteの情報追加
+  - docsサイトのトップページ更新
+  - 各パッケージのREADME作成
 
 ## 今後の拡張候補
 
