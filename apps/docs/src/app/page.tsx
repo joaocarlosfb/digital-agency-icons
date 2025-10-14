@@ -13,6 +13,8 @@ import {
   SmartphoneFill,
   SmartphoneLine,
 } from '@imaimai17468/digital-agency-icons-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CodeBlock } from '@/components/code-block';
 
 export default function Home() {
   return (
@@ -55,39 +57,45 @@ export default function Home() {
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Installation</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div>
-              <h3 className="text-lg font-medium mb-2">React</h3>
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
-                <code className="text-sm">
-                  pnpm add @imaimai17468/digital-agency-icons-react
-                </code>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-medium mb-2">Vue 3</h3>
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
-                <code className="text-sm">
-                  pnpm add @imaimai17468/digital-agency-icons-vue
-                </code>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-medium mb-2">Svelte</h3>
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
-                <code className="text-sm">
-                  pnpm add @imaimai17468/digital-agency-icons-svelte
-                </code>
-              </div>
-            </div>
-          </div>
+          <Tabs defaultValue="react" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="react">React</TabsTrigger>
+              <TabsTrigger value="vue">Vue 3</TabsTrigger>
+              <TabsTrigger value="svelte">Svelte</TabsTrigger>
+            </TabsList>
+            <TabsContent value="react" className="space-y-4">
+              <CodeBlock
+                pnpm="pnpm add @imaimai17468/digital-agency-icons-react"
+                npm="npm install @imaimai17468/digital-agency-icons-react"
+                yarn="yarn add @imaimai17468/digital-agency-icons-react"
+              />
+            </TabsContent>
+            <TabsContent value="vue" className="space-y-4">
+              <CodeBlock
+                pnpm="pnpm add @imaimai17468/digital-agency-icons-vue"
+                npm="npm install @imaimai17468/digital-agency-icons-vue"
+                yarn="yarn add @imaimai17468/digital-agency-icons-vue"
+              />
+            </TabsContent>
+            <TabsContent value="svelte" className="space-y-4">
+              <CodeBlock
+                pnpm="pnpm add @imaimai17468/digital-agency-icons-svelte"
+                npm="npm install @imaimai17468/digital-agency-icons-svelte"
+                yarn="yarn add @imaimai17468/digital-agency-icons-svelte"
+              />
+            </TabsContent>
+          </Tabs>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Usage</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-medium mb-2">React</h3>
+          <Tabs defaultValue="react" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="react">React</TabsTrigger>
+              <TabsTrigger value="vue">Vue 3</TabsTrigger>
+              <TabsTrigger value="svelte">Svelte</TabsTrigger>
+            </TabsList>
+            <TabsContent value="react">
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
                 <pre className="text-sm overflow-x-auto">
 {`import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-react';
@@ -102,9 +110,8 @@ function App() {
 }`}
                 </pre>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-medium mb-2">Vue 3</h3>
+            </TabsContent>
+            <TabsContent value="vue">
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
                 <pre className="text-sm overflow-x-auto">
 {`<script setup lang="ts">
@@ -119,9 +126,8 @@ import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-vue';
 </template>`}
                 </pre>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-medium mb-2">Svelte</h3>
+            </TabsContent>
+            <TabsContent value="svelte">
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
                 <pre className="text-sm overflow-x-auto">
 {`<script lang="ts">
@@ -132,8 +138,8 @@ import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-vue';
 <SearchLine size={32} color="#1A1A1C" />`}
                 </pre>
               </div>
-            </div>
-          </div>
+            </TabsContent>
+          </Tabs>
         </section>
 
         <section className="mb-12">
