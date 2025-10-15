@@ -3,5 +3,11 @@
   "buildCommand": "cd ../.. && pnpm install --no-frozen-lockfile --prod=false && pnpm --filter @imaimai17468/digital-agency-icons-react build && pnpm --filter @digital-agency-icons/docs build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "pnpm install --no-frozen-lockfile --prod=false"
+  "installCommand": "pnpm install --no-frozen-lockfile --prod=false",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "develop": true
+    }
+  }
 }
