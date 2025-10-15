@@ -1,13 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { useI18n } from '@/locales/client';
 import Link from 'next/link';
 import { IconSearch } from '@/components/IconSearch';
 import { IconGrid } from '@/components/IconGrid';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageToggle } from '@/components/language-toggle';
 import { searchIcons, iconMetadata, type Category } from '@/lib/icons';
 
-export default function IconsPage() {
+export function IconsClient() {
+  const t = useI18n();
   const [filteredIcons, setFilteredIcons] = useState(iconMetadata);
 
   const handleSearch = (query: string, category: Category) => {
@@ -26,14 +29,17 @@ export default function IconsPage() {
                 href="/"
                 className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
               >
-                ← ホームに戻る
+                ← {t('icons.backToHome')}
               </Link>
-              <h1 className="text-3xl font-bold mt-2">アイコン一覧</h1>
+              <h1 className="text-3xl font-bold mt-2">{t('icons.title')}</h1>
               <p className="text-gray-600 dark:text-gray-400 mt-1">
-                デジタル庁公式アイコン全60種類（Fill/Line）
+                {t('viewAll.description')}
               </p>
             </div>
-            <ThemeToggle />
+            <div className="flex gap-3">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>

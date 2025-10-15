@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useI18n } from '@/locales/client';
 import Link from 'next/link';
 import {
   AddFill,
@@ -17,8 +18,10 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CodeBlock } from '@/components/code-block';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageToggle } from '@/components/language-toggle';
 
-export default function Home() {
+export function HomeClient() {
+  const t = useI18n();
   const [framework, setFramework] = useState<string>('react');
   return (
     <main className="min-h-screen p-8">
@@ -26,12 +29,15 @@ export default function Home() {
         <header className="mb-12">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h1 className="text-4xl font-bold mb-4">Digital Agency Icons</h1>
+              <h1 className="text-4xl font-bold mb-4">{t('home.title')}</h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
-                デジタル庁デザインシステムのアイコンを楽に使えるようにした非公式ライブラリ
+                {t('home.description')}
               </p>
             </div>
-            <ThemeToggle />
+            <div className="flex gap-3">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -39,7 +45,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
             >
               <SearchFill size={20} />
-              全アイコンを検索
+              {t('home.searchAllIcons')}
             </Link>
             <a
               href="https://github.com/imaimai17468/digital-agency-icons"
@@ -56,13 +62,13 @@ export default function Home() {
               >
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
-              GitHub
+              {t('home.github')}
             </a>
           </div>
         </header>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Quick Demo</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t('quickDemo.title')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { Fill: AddFill, Line: AddLine, name: 'Add' },
@@ -83,7 +89,7 @@ export default function Home() {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Installation</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t('installation.title')}</h2>
           <Tabs value={framework} onValueChange={setFramework}>
             <TabsList>
               <TabsTrigger value="react">React</TabsTrigger>
@@ -115,7 +121,7 @@ export default function Home() {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Usage</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t('usage.title')}</h2>
           <Tabs value={framework} onValueChange={setFramework}>
             <TabsList>
               <TabsTrigger value="react">React</TabsTrigger>
@@ -170,21 +176,21 @@ import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-vue';
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Features</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t('features.title')}</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-            <li>120個のアイコン（Fill/Line バリアント）</li>
-            <li>TypeScript完全対応</li>
-            <li>Tree-shaking対応</li>
-            <li>カスタマイズ可能なサイズ・カラー</li>
-            <li>アクセシビリティ対応</li>
+            <li>{t('features.item1')}</li>
+            <li>{t('features.item2')}</li>
+            <li>{t('features.item3')}</li>
+            <li>{t('features.item4')}</li>
+            <li>{t('features.item5')}</li>
           </ul>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">デザインシステム</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t('designSystem.title')}</h2>
           <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gray-50 dark:bg-gray-800">
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              このライブラリは、デジタル庁が公開している公式デザインシステムのアイコンを元に作成されています。
+              {t('designSystem.description')}
             </p>
             <a
               href="https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons"
@@ -207,23 +213,23 @@ import { AddFill, SearchLine } from '@imaimai17468/digital-agency-icons-vue';
                 <polyline points="15 3 21 3 21 9" />
                 <line x1="10" y1="14" x2="21" y2="3" />
               </svg>
-              デジタル庁デザインシステム - イラスト・アイコン
+              {t('designSystem.link')}
             </a>
           </div>
         </section>
 
         <section className="border-t border-gray-200 dark:border-gray-700 pt-12">
           <div className="text-center">
-            <h2 className="text-2xl font-semibold mb-4">すべてのアイコンを見る</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('viewAll.title')}</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              検索機能で60種類のアイコン（Fill/Line）から簡単に探せます
+              {t('viewAll.description')}
             </p>
             <Link
               href="/icons"
               className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium rounded-lg transition-colors"
             >
               <SearchFill size={24} />
-              アイコンを検索
+              {t('viewAll.button')}
               <ArrowRightFill size={20} />
             </Link>
           </div>

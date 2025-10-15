@@ -1,6 +1,5 @@
 'use client';
-
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import * as Icons from '@imaimai17468/digital-agency-icons-react';
 import type { IconInfo } from '@/lib/icons';
 
@@ -12,28 +11,71 @@ interface IconModalProps {
 
 export function IconModal({ icon, variant, onClose }: IconModalProps) {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const triggerElementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (icon) {
+      triggerElementRef.current = document.activeElement as HTMLElement;
+      dialog.showModal();
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        const focusableElements = dialog.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusableElements.length > 0) {
+          focusableElements[0].focus();
+        }
+      });
+    } else {
+      const restoreFocus = () => {
+        if (triggerElementRef.current) {
+          triggerElementRef.current.focus();
+          triggerElementRef.current = null;
+        }
+        document.body.style.overflow = '';
+      };
+
+      dialog.addEventListener('close', restoreFocus, { once: true });
+      dialog.close();
+    }
+
+    const handleCancel = (e: Event) => {
+      e.preventDefault();
+      onClose();
+    };
+
+    const handleClick = (e: MouseEvent) => {
+      if (e.target === dialog) {
         onClose();
       }
     };
 
     if (icon) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      dialog.addEventListener('cancel', handleCancel);
+      dialog.addEventListener('click', handleClick);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      dialog.removeEventListener('cancel', handleCancel);
+      dialog.removeEventListener('click', handleClick);
     };
   }, [icon, onClose]);
 
-  if (!icon) return null;
+  if (!icon)
+    return (
+      <dialog
+        ref={dialogRef}
+        className="backdrop:bg-black/50 backdrop:backdrop-blur-sm p-0 m-0 max-w-none w-full h-full max-h-none bg-transparent border-0"
+      />
+    );
 
-  const componentName = variant === 'fill' ? icon.fillComponent : icon.lineComponent;
+  const componentName =
+    variant === 'fill' ? icon.fillComponent : icon.lineComponent;
   const IconComponent = (Icons as any)[componentName];
 
   const importStatement = `import { ${componentName} } from '@imaimai17468/digital-agency-icons-react';`;
@@ -52,16 +94,14 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
   };
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-      onClick={onClose}
+    <dialog
+      ref={dialogRef}
+      className="backdrop:bg-black/50 backdrop:backdrop-blur-sm p-0 m-0 max-w-none w-full h-full max-h-none bg-transparent border-0 flex items-center justify-center"
+      aria-label={`${icon.name}アイコンの詳細`}
     >
-      <div
-        className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto m-4">
         {/* ヘッダー */}
-        <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
+        <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             {IconComponent && (
               <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
@@ -202,7 +242,9 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
                 <code>{usageExampleWithProps}</code>
               </pre>
               <button
-                onClick={() => copyToClipboard(usageExampleWithProps, 'advanced')}
+                onClick={() =>
+                  copyToClipboard(usageExampleWithProps, 'advanced')
+                }
                 className="absolute top-2 right-2 p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Copy to clipboard"
               >
@@ -251,7 +293,9 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
                   key={size}
                   className="flex flex-col items-center justify-center gap-2 p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
                 >
-                  {IconComponent && <IconComponent size={size} color="currentColor" />}
+                  {IconComponent && (
+                    <IconComponent size={size} color="currentColor" />
+                  )}
                   <span className="text-xs text-gray-500">{size}px</span>
                 </div>
               ))}
@@ -267,21 +311,27 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
                   <tr>
                     <th className="px-4 py-2 text-left font-semibold">Prop</th>
                     <th className="px-4 py-2 text-left font-semibold">型</th>
-                    <th className="px-4 py-2 text-left font-semibold">デフォルト</th>
+                    <th className="px-4 py-2 text-left font-semibold">
+                      デフォルト
+                    </th>
                     <th className="px-4 py-2 text-left font-semibold">説明</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">size</td>
-                    <td className="px-4 py-2 font-mono text-xs">number | string</td>
+                    <td className="px-4 py-2 font-mono text-xs">
+                      number | string
+                    </td>
                     <td className="px-4 py-2 font-mono text-xs">24</td>
                     <td className="px-4 py-2">アイコンのサイズ（px）</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">color</td>
                     <td className="px-4 py-2 font-mono text-xs">string</td>
-                    <td className="px-4 py-2 font-mono text-xs">currentColor</td>
+                    <td className="px-4 py-2 font-mono text-xs">
+                      currentColor
+                    </td>
                     <td className="px-4 py-2">アイコンの色</td>
                   </tr>
                   <tr>
@@ -292,7 +342,9 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
                   </tr>
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">style</td>
-                    <td className="px-4 py-2 font-mono text-xs">CSSProperties</td>
+                    <td className="px-4 py-2 font-mono text-xs">
+                      CSSProperties
+                    </td>
                     <td className="px-4 py-2">-</td>
                     <td className="px-4 py-2">インラインスタイル</td>
                   </tr>
@@ -331,6 +383,6 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
           )}
         </div>
       </div>
-    </div>
+    </dialog>
   );
 }
