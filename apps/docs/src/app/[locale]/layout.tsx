@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ThemeProvider } from '@/components/theme-provider';
-import { locales } from '@/i18n/request';
+import { locales } from '@/i18n';
 import '../globals.css';
 
 type Props = {
