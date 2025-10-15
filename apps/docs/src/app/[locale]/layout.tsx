@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ThemeProvider } from '@/components/theme-provider';
-import { locales } from '@/i18n';
+import { locales } from '@/locales';
+import { I18nProviderClient } from '@/locales/client';
 import '../globals.css';
 
 type Props = {
@@ -137,11 +136,6 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  // Enable static rendering
-  setRequestLocale(locale);
-
-  const messages = await getMessages();
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -180,9 +174,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           enableSystem
           disableTransitionOnChange
         >
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
+          <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
         </ThemeProvider>
       </body>
     </html>
