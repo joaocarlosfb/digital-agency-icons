@@ -4,6 +4,7 @@ import { useState } from 'react';
 import type { IconInfo } from '@/lib/icons';
 import * as Icons from '@imaimai17468/digital-agency-icons-react';
 import { IconModal } from './IconModal';
+import { useI18n } from '@/locales/client';
 
 interface IconGridProps {
   icons: IconInfo[];
@@ -12,6 +13,7 @@ interface IconGridProps {
 type IconVariant = 'fill' | 'line';
 
 export function IconGrid({ icons }: IconGridProps) {
+  const t = useI18n();
   const [selectedIcon, setSelectedIcon] = useState<IconInfo | null>(null);
   const [variant, setVariant] = useState<IconVariant>('fill');
 
@@ -19,10 +21,10 @@ export function IconGrid({ icons }: IconGridProps) {
     return (
       <div className="text-center py-16">
         <p className="text-gray-500 dark:text-gray-400 text-lg">
-          アイコンが見つかりませんでした
+          {t('icons.noResults')}
         </p>
         <p className="text-gray-400 dark:text-gray-500 text-sm mt-2">
-          別のキーワードで検索してみてください
+          {t('icons.tryDifferentKeyword')}
         </p>
       </div>
     );
@@ -67,7 +69,7 @@ export function IconGrid({ icons }: IconGridProps) {
               key={`${icon.name}-${variant}`}
               onClick={() => setSelectedIcon(icon)}
               className="group relative flex flex-col items-center justify-center gap-2 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all"
-              title={`クリックして詳細を表示`}
+              title={t('icons.clickToView')}
             >
               <IconComponent
                 size={32}
@@ -84,7 +86,7 @@ export function IconGrid({ icons }: IconGridProps) {
 
       {/* 結果件数 */}
       <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-        {icons.length} 件のアイコン
+        {icons.length} {t('icons.count')}
       </div>
 
       {/* モーダル */}

@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import * as Icons from '@imaimai17468/digital-agency-icons-react';
 import type { IconInfo } from '@/lib/icons';
+import { useI18n } from '@/locales/client';
 
 interface IconModalProps {
   icon: IconInfo | null;
@@ -10,6 +11,7 @@ interface IconModalProps {
 }
 
 export function IconModal({ icon, variant, onClose }: IconModalProps) {
+  const t = useI18n();
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerElementRef = useRef<HTMLElement | null>(null);
@@ -118,7 +120,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
-            aria-label="閉じる"
+            aria-label={t('modal.close')}
           >
             <svg
               width="24"
@@ -140,7 +142,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
         <div className="p-6 space-y-6">
           {/* インポート文 */}
           <section>
-            <h3 className="text-lg font-semibold mb-3">インポート</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('modal.import')}</h3>
             <div className="relative">
               <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm">
                 <code>{importStatement}</code>
@@ -188,7 +190,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
 
           {/* 基本的な使い方 */}
           <section>
-            <h3 className="text-lg font-semibold mb-3">基本的な使い方</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('modal.basicUsage')}</h3>
             <div className="relative">
               <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm">
                 <code>{usageExample}</code>
@@ -236,7 +238,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
 
           {/* プロパティ付きの使い方 */}
           <section>
-            <h3 className="text-lg font-semibold mb-3">カスタマイズ例</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('modal.customization')}</h3>
             <div className="relative">
               <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm">
                 <code>{usageExampleWithProps}</code>
@@ -286,7 +288,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
 
           {/* プレビュー */}
           <section>
-            <h3 className="text-lg font-semibold mb-3">プレビュー</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('modal.preview')}</h3>
             <div className="grid grid-cols-3 gap-4">
               {[16, 24, 32, 48, 64, 96].map((size) => (
                 <div
@@ -304,17 +306,17 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
 
           {/* Props */}
           <section>
-            <h3 className="text-lg font-semibold mb-3">利用可能なProps</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('modal.availableProps')}</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-100 dark:bg-gray-800">
                   <tr>
-                    <th className="px-4 py-2 text-left font-semibold">Prop</th>
-                    <th className="px-4 py-2 text-left font-semibold">型</th>
+                    <th className="px-4 py-2 text-left font-semibold">{t('modal.prop')}</th>
+                    <th className="px-4 py-2 text-left font-semibold">{t('modal.type')}</th>
                     <th className="px-4 py-2 text-left font-semibold">
-                      デフォルト
+                      {t('modal.default')}
                     </th>
-                    <th className="px-4 py-2 text-left font-semibold">説明</th>
+                    <th className="px-4 py-2 text-left font-semibold">{t('modal.description')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -324,7 +326,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
                       number | string
                     </td>
                     <td className="px-4 py-2 font-mono text-xs">24</td>
-                    <td className="px-4 py-2">アイコンのサイズ（px）</td>
+                    <td className="px-4 py-2">{t('modal.iconSize')}</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">color</td>
@@ -332,13 +334,13 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
                     <td className="px-4 py-2 font-mono text-xs">
                       currentColor
                     </td>
-                    <td className="px-4 py-2">アイコンの色</td>
+                    <td className="px-4 py-2">{t('modal.iconColor')}</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">className</td>
                     <td className="px-4 py-2 font-mono text-xs">string</td>
                     <td className="px-4 py-2">-</td>
-                    <td className="px-4 py-2">CSSクラス</td>
+                    <td className="px-4 py-2">{t('modal.cssClass')}</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">style</td>
@@ -346,19 +348,19 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
                       CSSProperties
                     </td>
                     <td className="px-4 py-2">-</td>
-                    <td className="px-4 py-2">インラインスタイル</td>
+                    <td className="px-4 py-2">{t('modal.inlineStyle')}</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">aria-label</td>
                     <td className="px-4 py-2 font-mono text-xs">string</td>
                     <td className="px-4 py-2">-</td>
-                    <td className="px-4 py-2">アクセシビリティラベル</td>
+                    <td className="px-4 py-2">{t('modal.a11yLabel')}</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 font-mono text-xs">title</td>
                     <td className="px-4 py-2 font-mono text-xs">string</td>
                     <td className="px-4 py-2">-</td>
-                    <td className="px-4 py-2">ツールチップタイトル</td>
+                    <td className="px-4 py-2">{t('modal.tooltipTitle')}</td>
                   </tr>
                 </tbody>
               </table>
@@ -368,7 +370,7 @@ export function IconModal({ icon, variant, onClose }: IconModalProps) {
           {/* タグ */}
           {icon.tags.length > 0 && (
             <section>
-              <h3 className="text-lg font-semibold mb-3">タグ</h3>
+              <h3 className="text-lg font-semibold mb-3">{t('modal.tags')}</h3>
               <div className="flex flex-wrap gap-2">
                 {icon.tags.map((tag) => (
                   <span
