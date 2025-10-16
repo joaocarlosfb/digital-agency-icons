@@ -17,8 +17,7 @@ import {
 } from '@imaimai17468/digital-agency-icons-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CodeBlock } from '@/components/code-block';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { LanguageToggle } from '@/components/language-toggle';
+import { Header } from '@/components/header';
 
 export function HomeClient() {
   const t = useI18n();
@@ -26,19 +25,11 @@ export function HomeClient() {
   return (
     <main className="min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-12">
-          <div className="flex items-start justify-between mb-4">
-            <div>
-              <h1 className="text-4xl font-bold mb-4">{t('home.title')}</h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
-                {t('home.description')}
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <LanguageToggle />
-              <ThemeToggle />
-            </div>
-          </div>
+        <Header>
+          <h1 className="text-4xl font-bold mb-4">{t('home.title')}</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
+            {t('home.description')}
+          </p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/icons"
@@ -65,7 +56,7 @@ export function HomeClient() {
               {t('home.github')}
             </a>
           </div>
-        </header>
+        </Header>
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">{t('quickDemo.title')}</h2>

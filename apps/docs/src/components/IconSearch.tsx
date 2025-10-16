@@ -1,13 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { categories, categoryLabels, type Category } from '@/lib/icons';
+import { categories, type Category } from '@/lib/icons';
+import { useI18n } from '@/locales/client';
 
 interface IconSearchProps {
   onSearch: (query: string, category: Category) => void;
 }
 
 export function IconSearch({ onSearch }: IconSearchProps) {
+  const t = useI18n();
   const [query, setQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
 
@@ -29,7 +31,7 @@ export function IconSearch({ onSearch }: IconSearchProps) {
           type="text"
           value={query}
           onChange={(e) => handleQueryChange(e.target.value)}
-          placeholder="アイコンを検索... (例: search, 検索, メール)"
+          placeholder={t('icons.searchPlaceholder')}
           className="w-full px-4 py-3 pl-12 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
         />
         <svg
@@ -59,7 +61,7 @@ export function IconSearch({ onSearch }: IconSearchProps) {
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
           >
-            {categoryLabels[category]}
+            {t(`icons.categories.${category}`)}
           </button>
         ))}
       </div>
