@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from '@/components/theme-provider';
 import { locales } from '@/locales';
 import { I18nProviderClient } from '@/locales/client';
@@ -176,6 +177,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         >
           <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
