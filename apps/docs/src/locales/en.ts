@@ -1,8 +1,8 @@
 export default {
   home: {
-    title: 'Digital Agency Icons',
+    title: 'Japan Digital Agency Icons',
     description:
-      'Unofficial library making Digital Agency Design System icons easy to use',
+      'Unofficial library making Japan Digital Agency Design System icons easy to use',
     searchAllIcons: 'Search All Icons',
     github: 'GitHub',
   },
@@ -20,8 +20,8 @@ export default {
   designSystem: {
     title: 'Design System',
     description:
-      'This library is based on icons from the official Digital Agency Design System.',
-    link: 'Digital Agency Design System - Illustrations & Icons',
+      'This library is based on icons from the official Japan Digital Agency Design System.',
+    link: 'Japan Digital Agency Design System - Illustrations & Icons',
   },
   viewAll: {
     title: 'View All Icons',
